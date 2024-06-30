@@ -54,7 +54,7 @@ app.get('/api/items/name/:name', (req, res) => {
     if (item) {  // If the item is found
         res.json(item);  // Respond with the item details in JSON format
     } else {  // If the item is not found
-        res.status(404).send('[Item not found]');  // Respond with a 404 status code and an error message
+        res.status(404).send('[Item not found] Oy laahh! Nyari yang ada-ada aja lah wey!');  // Respond with a 404 status code and an error message
     }
 });
 
