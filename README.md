@@ -13,3 +13,4 @@ It's just a personal dummy service created by Risna for automation testing pract
    (2) `node index.js`
 
 5. Try the API **from your local** for this service here: https://www.postman.com/planetary-water-216021/workspace/dummy-api-for-testing-practice 
+6. Alright. Now, you're ready to go (home and sleep.) 😂
