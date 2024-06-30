@@ -1,1 +1,15 @@
-# dummyService-js
+#  dummyService-js
+
+Hi, there.
+It's just a personal dummy service created by Risna for automation testing practice purpose and nothing's special. And... since you're already here, thanks for wanting to know anywayyy ehehehee... Have a good dayy... cheers 🥂
+
+### How to ...
+1. Pull the project
+2. Install node modules
+3. Install express.js
+    `npm install express`
+4. Run the index.js with these commands
+    `touch index.js`
+    `node index.js`
+
+5. Try the API for this service here: https://www.postman.com/planetary-water-216021/workspace/dummy-api-for-testing-practice 
