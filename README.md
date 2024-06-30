@@ -1,7 +1,7 @@
 #  dummyService-js
 
 Hi, there.
-It's just a personal dummy service created by Risna for automation testing practice purpose and nothing's special. And... since you're already here, thanks for wanting to know anywayyy ehehehee... Have a good dayy... cheers 🥂
+It's just a dummy service created by Risna for her automation testing practice purpose and nothing's special. And... since you're already here, thanks for wanting to know anywayyy ehehehee... Have a good dayy... cheers 🥂
 
 ### How to ...
 1. Pull the project
