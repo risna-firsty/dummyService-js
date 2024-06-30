@@ -6,10 +6,10 @@ It's just a personal dummy service created by Risna for automation testing pract
 ### How to ...
 1. Pull the project
 2. Install node modules
-3. Install express.js
+3. Install express.js with this command: 
     `npm install express`
 4. Run the index.js with these commands
-    `touch index.js`
-    `node index.js`
+   (1) `touch index.js`
+   (2) `node index.js`
 
 5. Try the API for this service here: https://www.postman.com/planetary-water-216021/workspace/dummy-api-for-testing-practice 
