@@ -155,7 +155,9 @@ app.get('/api/items/name/:name', (req, res) => {
 app.post('/api/items', (req, res) => {
   const newItem = {
     id: items.length + 1,
-    name: req.body.name
+    name: req.body.name,
+    color: req.body.color,
+    price: req.body.price
   };
   items.push(newItem);
   res.status(201).json(newItem);
