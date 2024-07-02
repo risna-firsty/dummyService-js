@@ -1,9 +1,32 @@
 const express = require('express');
+// const bodyParser = require('body-parser');
+// const jwt = require('jsonwebtoken');
+//const bcrypt = require('bcryptjs')
+
 const app = express();
 const port = 3000;
 
 app.use(express.json());
+// app.use(bodyParser.json());
 
+// User database
+// const users = [
+//     {
+//         id: 1,
+//         username: 'user1',
+//         password: bcrypt.hashSync('password1', 8) // Hash the pswd
+//     },
+//     {
+//         id: 2,
+//         username: 'user2',
+//         password: bcrypt.hashSync('password2', 8) // Hash the pswd
+//     }
+// ];
+
+// // Secret key for jwt
+// const secretKey = 'your_secret_key';
+
+// items array
 const items = [
     { id: 1, name: 'Book', color: 'Red', price: '1500' },
     { id: 2, name: 'Pencil', color: 'Blue', price: '2000' },
@@ -28,8 +51,77 @@ const items = [
 ];
 
 app.get('/', (req, res) => {
-  res.send('Hello, World!');
+    res.send('Hello, World!');
 });
+
+// POST - Login endpoint
+// app.post('/api/login', (req, res) =>{
+//     const { username, password } = req.body;
+//     const user = users.find(u => u.username === username);
+
+//     if (!user) {
+//         return res.status(404).send('[User not found] Hayoo kamu stranger kann? Ngakuuu');
+//     }
+
+//     const passwordIsValid = bcrypt.compareSync(password, user.password);
+
+//     if(!passwordIsValid) {
+//         return res.status(401).send('[Invalid password] Passwordmu lhooo, sing bener taa')
+//     }
+
+//     const token = jwt.sign({ id: user.id}, secretKey, {
+//         expiresIn: 86400 //24 hours expiration
+//     })
+
+//     res.status(200).send({auth: true, token });
+// })
+
+// // Middleware to verify token
+// function verifyToken(req, res, next) {
+//     const token = req.headers['x-access-token'];
+
+//     if (!token) {
+//         return res.status(403).send('No token provided');
+//     }
+
+//     jwt.verify(token, secretkey, (err, decoded) =>{
+//         if (err) {
+//             return res.status(500).send('Failed to authenticate token');
+//         }
+//         req.userId = decode.id;
+//         next();
+//     })
+// }
+
+// // Protected route to get all items
+// app.get('/api/items', verifyToken, (req, res) => {
+//     res.status(200).send(items);
+// });
+
+// // Protected route to get item by id
+// app.get('/api/items/:id', verifyToken, (req, res) => {
+//     const item = items.find(i => i.id === parseInt(req.params.id));
+//     if (!item) {
+//         return res.status(404).send('Item not found');
+//     }
+//     res.status(200).send(item);
+// });
+
+// // Protected route to get item by name
+// app.get('/api/items/name/:name', verifyToken, (req, res) => {
+//     const item = items.find(i => i.name.toLowerCase() === req.params.name.toLowerCase());
+//     if (!item) {
+//         return res.status(404).send('Item not found');
+//     }
+//     res.status(200).send(item);
+// });
+
+// // Handle incorrect routes
+// app.use((req, res) => {
+//     res.status(404).send('Invalid API path');
+// });
+
+
 
 // GET endpoint to retrieve all items
 app.get('/api/items', (req, res) => {
@@ -59,7 +151,7 @@ app.get('/api/items/name/:name', (req, res) => {
 });
 
 
-
+// POST creqte new data
 app.post('/api/items', (req, res) => {
   const newItem = {
     id: items.length + 1,
@@ -69,6 +161,7 @@ app.post('/api/items', (req, res) => {
   res.status(201).json(newItem);
 });
 
+// Start incorrect routes
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
